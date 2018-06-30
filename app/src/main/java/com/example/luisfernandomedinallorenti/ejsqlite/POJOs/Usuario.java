@@ -10,6 +10,9 @@ public class Usuario {
     private String pass;
 
     //Constructor
+    public Usuario(){
+
+    }
 
     public Usuario(String correo, String pass) {
         this.correo = correo;

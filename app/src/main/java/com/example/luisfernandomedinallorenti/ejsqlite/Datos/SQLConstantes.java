@@ -14,4 +14,8 @@ public class SQLConstantes {
             COLUMN_CORREO+ " TEXT NOT NULL," +
             COLUMN_PASS+ " TEXT NOT NULL );";
     public static final String SQL_DELETE="DROP TABLE "+TABLE_USUARIO;
+
+    public static final String[] ALL_COLUMNS={COLUMN_ID,COLUMN_CORREO};
+
+    public static final String SEARCH_BY_CORREO="correo=?";
 }

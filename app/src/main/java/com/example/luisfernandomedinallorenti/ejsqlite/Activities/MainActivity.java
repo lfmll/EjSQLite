@@ -9,17 +9,27 @@ import android.widget.Button;
 import com.example.luisfernandomedinallorenti.ejsqlite.R;
 
 public class MainActivity extends AppCompatActivity {
-    Button btnInsert;
+    Button btnInsert,btnBuscar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         btnInsert=(Button)findViewById(R.id.btnInsertar);
+        btnBuscar=(Button)findViewById(R.id.btnBuscar);
+
         btnInsert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this,InsertarActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnBuscar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,BuscarActivity.class);
                 startActivity(intent);
             }
         });
