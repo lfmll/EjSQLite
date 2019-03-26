@@ -45,4 +45,34 @@ public class Data {
         }
         return usuario;
     }
+    public Usuario getUsuarioID(String id){
+        Usuario usuario=new Usuario();
+        String[] whereArgs=new String[]{id};
+        Cursor cursor=sqLiteDatabase.query(
+                SQLConstantes.TABLE_USUARIO,
+                SQLConstantes.ALL_COLUMNS,
+                SQLConstantes.WHERE_ID_CLAUSE,
+                whereArgs,
+                null,null,null
+        );
+        while (cursor.moveToNext()){
+            usuario.setId(cursor.getInt(cursor.getColumnIndex(SQLConstantes.COLUMN_ID)));
+            usuario.setCorreo(cursor.getString(cursor.getColumnIndex(SQLConstantes.COLUMN_CORREO)));
+        }
+        return usuario;
+    }
+    public void deleteUser(String id){
+        String[]whereArgs=new String[]{String.valueOf(id)};
+        sqLiteDatabase.delete(SQLConstantes.TABLE_USUARIO,
+                SQLConstantes.WHERE_ID_CLAUSE,
+                whereArgs);
+    }
+    public void updateUser(String id,ContentValues contentValues){
+        String[]whereArgs=new String[]{String.valueOf(id)};
+        sqLiteDatabase.update(
+                SQLConstantes.TABLE_USUARIO,
+                contentValues,
+                SQLConstantes.WHERE_ID_CLAUSE,
+                whereArgs);
+    }
 }

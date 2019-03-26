@@ -18,4 +18,5 @@ public class SQLConstantes {
     public static final String[] ALL_COLUMNS={COLUMN_ID,COLUMN_CORREO};
 
     public static final String SEARCH_BY_CORREO="correo=?";
+    public static final String WHERE_ID_CLAUSE="id=?";
 }
